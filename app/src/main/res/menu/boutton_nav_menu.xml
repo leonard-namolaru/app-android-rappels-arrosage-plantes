@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:id="@+id/miHome"
+    android:title="Home"
+    android:icon="@drawable/ic_home" />
+
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        android:onClick="rechercheDePlantes" />
+
+    <item android:id="@+id/placeholder"
+        android:title=""
+        />
+
+    <item android:id="@+id/aVenir"
+        android:title="Next wattering"
+        android:icon="@drawable/ic_baseline_access_alarm_24"
+        android:onClick="plantesArroserAujourdhui"
+        />
+
+    <item android:id="@+id/exit"
+        android:title="Exit"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:onClick="exitApp"
+        />
+
+
+</menu>

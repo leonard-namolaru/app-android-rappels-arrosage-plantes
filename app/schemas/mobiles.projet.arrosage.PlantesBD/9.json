@@ -1,0 +1,96 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "f432ae8cef5f65f729a7612c9049bb1e",
+    "entities": [
+      {
+        "tableName": "TablePlante",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idPlante` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nomCommun` TEXT NOT NULL, `nomLatin` TEXT, `dateProchainArosage` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idPlante",
+            "columnName": "idPlante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomCommun",
+            "columnName": "nomCommun",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomLatin",
+            "columnName": "nomLatin",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateProchainArosage",
+            "columnName": "dateProchainArosage",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idPlante"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Frequence",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`IdFrequence` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `IdPlante` INTEGER NOT NULL, `dateDebut` TEXT NOT NULL, `dateFin` TEXT NOT NULL, `nbFois` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "IdFrequence",
+            "columnName": "IdFrequence",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "IdPlante",
+            "columnName": "IdPlante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateDebut",
+            "columnName": "dateDebut",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateFin",
+            "columnName": "dateFin",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nbFois",
+            "columnName": "nbFois",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "IdFrequence"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f432ae8cef5f65f729a7612c9049bb1e')"
+    ]
+  }
+}
